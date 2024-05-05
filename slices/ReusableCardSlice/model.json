@@ -1,0 +1,50 @@
+{
+  "id": "reusable_card_slice",
+  "type": "SharedSlice",
+  "name": "ReusableCardSlice",
+  "description": "ReusableCardSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "tagline": {
+          "type": "Text",
+          "config": {
+            "label": "Tagline",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "card_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Card Heading",
+            "placeholder": ""
+          }
+        },
+        "card_content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Card Content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      }
+    }
+  ]
+}

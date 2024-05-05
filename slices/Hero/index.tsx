@@ -15,7 +15,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="block-space-large bg-mainB text-white"
+      className="block-space-large bg-vercel bg-mainB text-white"
     >
       <div className="big-container">
         <div className="grid grid-cols-3">

@@ -79,6 +79,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ReusableCardSliceSlice
   | FrequentAnsweredQuestionsSlice
   | TestimonialsSlice
   | ReusuableContentSlice
@@ -702,6 +703,86 @@ export type PageHeroSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ReusableCardSlice → Primary*
+ */
+export interface ReusableCardSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *ReusableCardSlice → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reusable_card_slice.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *ReusableCardSlice → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reusable_card_slice.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ReusableCardSlice → Items*
+ */
+export interface ReusableCardSliceSliceDefaultItem {
+  /**
+   * Card Heading field in *ReusableCardSlice → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reusable_card_slice.items[].card_heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  card_heading: prismic.KeyTextField;
+
+  /**
+   * Card Content field in *ReusableCardSlice → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reusable_card_slice.items[].card_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  card_content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ReusableCardSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ReusableCardSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ReusableCardSliceSliceDefaultPrimary>,
+  Simplify<ReusableCardSliceSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ReusableCardSlice*
+ */
+type ReusableCardSliceSliceVariation = ReusableCardSliceSliceDefault;
+
+/**
+ * ReusableCardSlice Shared Slice
+ *
+ * - **API ID**: `reusable_card_slice`
+ * - **Description**: ReusableCardSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ReusableCardSliceSlice = prismic.SharedSlice<
+  "reusable_card_slice",
+  ReusableCardSliceSliceVariation
+>;
+
+/**
  * Primary content in *ReusuableContent → Primary*
  */
 export interface ReusuableContentSliceDefaultPrimary {
@@ -949,6 +1030,11 @@ declare module "@prismicio/client" {
       PageHeroSliceDefaultPrimary,
       PageHeroSliceVariation,
       PageHeroSliceDefault,
+      ReusableCardSliceSlice,
+      ReusableCardSliceSliceDefaultPrimary,
+      ReusableCardSliceSliceDefaultItem,
+      ReusableCardSliceSliceVariation,
+      ReusableCardSliceSliceDefault,
       ReusuableContentSlice,
       ReusuableContentSliceDefaultPrimary,
       ReusuableContentSliceDefaultItem,

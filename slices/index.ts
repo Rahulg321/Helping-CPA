@@ -13,6 +13,7 @@ export const components = {
   image_content: dynamic(() => import("./ImageContent")),
   newsletter_sub: dynamic(() => import("./NewsletterSub")),
   page_hero: dynamic(() => import("./PageHero")),
+  reusable_card_slice: dynamic(() => import("./ReusableCardSlice")),
   reusuable_content: dynamic(() => import("./ReusuableContent")),
   solutions: dynamic(() => import("./Solutions")),
   testimonials: dynamic(() => import("./Testimonials")),

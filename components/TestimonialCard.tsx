@@ -20,13 +20,13 @@ const TestimonialCard = () => {
     <Card>
       <CardHeader>
         <CardTitle>Jon Snow</CardTitle>
-        <CardDescription className="flex gap-2">
+        <div className="flex gap-2">
           <TestimonialStar />
           <TestimonialStar />
           <TestimonialStar />
           <TestimonialStar />
           <TestimonialStar />
-        </CardDescription>
+        </div>
       </CardHeader>
       <CardContent>
         <p>

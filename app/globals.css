@@ -137,6 +137,26 @@ h6 {
   padding-block: min(9vh, 14rem);
 }
 
+.bg-vercel {
+  position: relative;
+}
+
+.bg-vercel::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: right bottom !important;
+  background-image: url("https://paro.ai/wp-content/uploads/2024/03/bg-pattern-large.png");
+  background-size: cover;
+  color: white;
+}
+
 .block-space {
   padding-block: min(6vh, 10rem);
 }
