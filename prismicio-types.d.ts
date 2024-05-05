@@ -345,6 +345,31 @@ export type FeaturedSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Features → Primary*
+ */
+export interface FeaturesSliceDefaultPrimary {
+  /**
+   * Heading field in *Features → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *Features → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+}
+
+/**
  * Default variation for Features Slice
  *
  * - **API ID**: `default`
@@ -353,7 +378,7 @@ export type FeaturedSlice = prismic.SharedSlice<
  */
 export type FeaturesSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<FeaturesSliceDefaultPrimary>,
   never
 >;
 
@@ -1363,6 +1388,7 @@ declare module "@prismicio/client" {
       FeaturedSliceVariation,
       FeaturedSliceDefault,
       FeaturesSlice,
+      FeaturesSliceDefaultPrimary,
       FeaturesSliceVariation,
       FeaturesSliceDefault,
       FrequentAnsweredQuestionsSlice,
