@@ -1,8 +1,8 @@
 {
-  "id": "image_content",
+  "id": "check_image_content",
   "type": "SharedSlice",
-  "name": "ImageContent",
-  "description": "ImageContent",
+  "name": "CheckImageContent",
+  "description": "CheckImageContent",
   "variations": [
     {
       "id": "default",
@@ -12,21 +12,19 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "dark_background": {
-          "type": "Boolean",
-          "config": {
-            "label": "Dark Background",
-            "default_value": false,
-            "placeholder_true": "true",
-            "placeholder_false": "false"
-          }
-        },
         "featured_image": {
           "type": "Image",
           "config": {
             "label": "Featured Image",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "tag": {
+          "type": "Text",
+          "config": {
+            "label": "Tag",
+            "placeholder": ""
           }
         },
         "heading": {
@@ -43,30 +41,6 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "button_label": {
-          "type": "Text",
-          "config": {
-            "label": "Button Label",
-            "placeholder": ""
-          }
-        },
-        "button_link": {
-          "type": "Link",
-          "config": {
-            "label": "Button Link",
-            "placeholder": "",
-            "select": null
-          }
-        },
-        "need_button": {
-          "type": "Boolean",
-          "config": {
-            "label": "Need Button",
-            "default_value": false,
-            "placeholder_true": "true",
-            "placeholder_false": "false"
           }
         },
         "right_image": {
@@ -88,7 +62,17 @@
           }
         }
       },
-      "items": {}
+      "items": {
+        "check_content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Check Content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      }
     }
   ]
 }

@@ -20,7 +20,7 @@ const NewsletterSub = ({ slice }: NewsletterSubProps): JSX.Element => {
     >
       <div className="big-container border-l-4 border-l-mainY px-4 py-8 text-white">
         <span className="mb-2 text-xl font-semibold">PARO NEWSLETTER</span>
-        <h2 className="mb-3">Get the Latest News & Insights from Paro</h2>
+        <h1 className="mb-3">Get the Latest News & Insights from Paro</h1>
         <p className="mb-2">
           Subscribe to get tips, success stories, business resources and more.
         </p>

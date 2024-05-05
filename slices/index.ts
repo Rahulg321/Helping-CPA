@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  check_image_content: dynamic(() => import("./CheckImageContent")),
   featured: dynamic(() => import("./Featured")),
   features: dynamic(() => import("./Features")),
   frequent_answered_questions: dynamic(
@@ -18,5 +19,6 @@ export const components = {
   reusable_card_slice: dynamic(() => import("./ReusableCardSlice")),
   reusuable_content: dynamic(() => import("./ReusuableContent")),
   solutions: dynamic(() => import("./Solutions")),
+  stats: dynamic(() => import("./Stats")),
   testimonials: dynamic(() => import("./Testimonials")),
 };

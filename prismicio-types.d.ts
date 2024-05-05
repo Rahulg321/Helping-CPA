@@ -79,6 +79,8 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | StatsSlice
+  | CheckImageContentSlice
   | FullWidthQuoteSlice
   | FullWidthFeaturedSlice
   | ReusableCardSliceSlice
@@ -154,6 +156,118 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 export type AllDocumentTypes = HomepageDocument | PageDocument;
+
+/**
+ * Primary content in *CheckImageContent → Primary*
+ */
+export interface CheckImageContentSliceDefaultPrimary {
+  /**
+   * Featured Image field in *CheckImageContent → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: check_image_content.primary.featured_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  featured_image: prismic.ImageField<never>;
+
+  /**
+   * Tag field in *CheckImageContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: check_image_content.primary.tag
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tag: prismic.KeyTextField;
+
+  /**
+   * Heading field in *CheckImageContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: check_image_content.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Content field in *CheckImageContent → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: check_image_content.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Right Image field in *CheckImageContent → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: check_image_content.primary.right_image
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  right_image: prismic.BooleanField;
+
+  /**
+   * Green Background field in *CheckImageContent → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: check_image_content.primary.green_background
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  green_background: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *CheckImageContent → Items*
+ */
+export interface CheckImageContentSliceDefaultItem {
+  /**
+   * Check Content field in *CheckImageContent → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: check_image_content.items[].check_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  check_content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for CheckImageContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CheckImageContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CheckImageContentSliceDefaultPrimary>,
+  Simplify<CheckImageContentSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *CheckImageContent*
+ */
+type CheckImageContentSliceVariation = CheckImageContentSliceDefault;
+
+/**
+ * CheckImageContent Shared Slice
+ *
+ * - **API ID**: `check_image_content`
+ * - **Description**: CheckImageContent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CheckImageContentSlice = prismic.SharedSlice<
+  "check_image_content",
+  CheckImageContentSliceVariation
+>;
 
 /**
  * Primary content in *Featured → Primary*
@@ -408,6 +522,31 @@ export type FullWidthFeaturedSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *FullWidthQuote → Primary*
+ */
+export interface FullWidthQuoteSliceDefaultPrimary {
+  /**
+   * Quote field in *FullWidthQuote → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: full_width_quote.primary.quote
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  quote: prismic.KeyTextField;
+
+  /**
+   * Author field in *FullWidthQuote → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: full_width_quote.primary.author
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  author: prismic.KeyTextField;
+}
+
+/**
  * Default variation for FullWidthQuote Slice
  *
  * - **API ID**: `default`
@@ -416,7 +555,7 @@ export type FullWidthFeaturedSlice = prismic.SharedSlice<
  */
 export type FullWidthQuoteSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<FullWidthQuoteSliceDefaultPrimary>,
   never
 >;
 
@@ -672,6 +811,17 @@ export interface ImageContentSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   right_image: prismic.BooleanField;
+
+  /**
+   * Green Background field in *ImageContent → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: image_content.primary.green_background
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  green_background: prismic.BooleanField;
 }
 
 /**
@@ -1035,6 +1185,103 @@ export type SolutionsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Stats → Primary*
+ */
+export interface StatsSliceDefaultPrimary {
+  /**
+   * Heading field in *Stats → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stats.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *Stats → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stats.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+
+  /**
+   * Button Label field in *Stats → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stats.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *Stats → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stats.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
+ * Primary content in *Stats → Items*
+ */
+export interface StatsSliceDefaultItem {
+  /**
+   * Circle Number field in *Stats → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stats.items[].circle_number
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  circle_number: prismic.KeyTextField;
+
+  /**
+   * Circle Heading field in *Stats → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stats.items[].circle_heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  circle_heading: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Stats Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StatsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<StatsSliceDefaultPrimary>,
+  Simplify<StatsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Stats*
+ */
+type StatsSliceVariation = StatsSliceDefault;
+
+/**
+ * Stats Shared Slice
+ *
+ * - **API ID**: `stats`
+ * - **Description**: Stats
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StatsSlice = prismic.SharedSlice<"stats", StatsSliceVariation>;
+
+/**
  * Primary content in *Testimonials → Primary*
  */
 export interface TestimonialsSliceDefaultPrimary {
@@ -1106,6 +1353,11 @@ declare module "@prismicio/client" {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      CheckImageContentSlice,
+      CheckImageContentSliceDefaultPrimary,
+      CheckImageContentSliceDefaultItem,
+      CheckImageContentSliceVariation,
+      CheckImageContentSliceDefault,
       FeaturedSlice,
       FeaturedSliceDefaultPrimary,
       FeaturedSliceVariation,
@@ -1123,6 +1375,7 @@ declare module "@prismicio/client" {
       FullWidthFeaturedSliceVariation,
       FullWidthFeaturedSliceDefault,
       FullWidthQuoteSlice,
+      FullWidthQuoteSliceDefaultPrimary,
       FullWidthQuoteSliceVariation,
       FullWidthQuoteSliceDefault,
       HeadingContentSlice,
@@ -1158,6 +1411,11 @@ declare module "@prismicio/client" {
       SolutionsSliceDefaultPrimary,
       SolutionsSliceVariation,
       SolutionsSliceDefault,
+      StatsSlice,
+      StatsSliceDefaultPrimary,
+      StatsSliceDefaultItem,
+      StatsSliceVariation,
+      StatsSliceDefault,
       TestimonialsSlice,
       TestimonialsSliceDefaultPrimary,
       TestimonialsSliceVariation,

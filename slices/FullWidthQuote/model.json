@@ -10,7 +10,24 @@
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": ""
+      "imageUrl": "",
+      "primary": {
+        "quote": {
+          "type": "Text",
+          "config": {
+            "label": "Quote",
+            "placeholder": ""
+          }
+        },
+        "author": {
+          "type": "Text",
+          "config": {
+            "label": "Author",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

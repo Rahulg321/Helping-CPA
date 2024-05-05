@@ -19,12 +19,10 @@ const FullWidthQuote = ({ slice }: FullWidthQuoteProps): JSX.Element => {
     >
       <div className="narrow-container">
         <blockquote className="my-4 border-l-4 border-gray-700 bg-gray-100 p-4 italic">
-          <p className="text-gray-800">
-            The Paro tax expert ensured that I paid the least tax possible under
-            the tax code and gave me insight on how I might be even more
-            efficient in years to come.
-          </p>
-          <footer className="mt-2 text-gray-600">Rishab Gupta</footer>
+          <p className="text-gray-800">{slice.primary.quote}</p>
+          <footer className="mt-2 font-semibold text-gray-600">
+            {slice.primary.author}
+          </footer>
         </blockquote>
       </div>
     </section>

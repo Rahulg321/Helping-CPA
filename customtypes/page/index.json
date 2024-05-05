@@ -17,6 +17,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "stats": {
+              "type": "SharedSlice"
+            },
+            "check_image_content": {
+              "type": "SharedSlice"
+            },
             "full_width_quote": {
               "type": "SharedSlice"
             },

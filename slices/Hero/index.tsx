@@ -19,7 +19,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     >
       <div className="big-container">
         <div className="grid grid-cols-3">
-          <div className="col-span-2 text-balance">
+          <div className="col-span-2 text-pretty">
             <h1 className="mb-4 font-semibold">{slice.primary.heading}</h1>
             <span className="text-2xl">{slice.primary.tagline}</span>
             <button className="mt-4 block border-4 border-mainG px-4 py-4 text-lg text-mainG text-white">

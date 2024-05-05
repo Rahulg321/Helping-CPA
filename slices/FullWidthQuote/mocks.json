@@ -2,7 +2,18 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"quote": {
+				"__TYPE__": "FieldContent",
+				"value": "air",
+				"type": "Text"
+			},
+			"author": {
+				"__TYPE__": "FieldContent",
+				"value": "size",
+				"type": "Text"
+			}
+		},
 		"items": []
 	}
 ]

@@ -18,19 +18,16 @@ const FullWidthFeatured = ({ slice }: FullWidthFeaturedProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="block-space bg-lightB text-white"
     >
-      <div className="big-container flex gap-4">
+      <div className="big-container flex flex-col gap-4 md:flex-row">
         <div>
-          <h3 className="mb-2">Make Tax Filing Easier and Faster</h3>
-          <p>
-            Get matched with a seasoned tax expert today who understands your
-            unique filing needs.
-          </p>
+          <h3 className="mb-2 uppercase">{slice.primary.heading}</h3>
+          <p>{slice.primary.tagline}</p>
         </div>
         <PrismicNextLink
           field={slice.primary.button_link}
-          className="rounded-md bg-mainG px-4 py-6"
+          className="rounded-md bg-mainG px-4 py-6 uppercase"
         >
-          SCHEDULE A FREE CONSULTATION
+          {slice.primary.button_label}
         </PrismicNextLink>
       </div>
     </section>
