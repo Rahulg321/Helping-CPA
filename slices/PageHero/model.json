@@ -1,0 +1,48 @@
+{
+  "id": "page_hero",
+  "type": "SharedSlice",
+  "name": "PageHero",
+  "description": "PageHero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "tagline": {
+          "type": "Text",
+          "config": {
+            "label": "Tagline",
+            "placeholder": ""
+          }
+        },
+        "hero_image": {
+          "type": "Image",
+          "config": {
+            "label": "Hero Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "tag": {
+          "type": "Text",
+          "config": {
+            "label": "Tag",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

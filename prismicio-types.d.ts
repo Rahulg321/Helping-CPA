@@ -78,7 +78,18 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = never;
+type PageDocumentDataSlicesSlice =
+  | FrequentAnsweredQuestionsSlice
+  | TestimonialsSlice
+  | ReusuableContentSlice
+  | ImageContentSlice
+  | SolutionsSlice
+  | PageHeroSlice
+  | HeroSlice
+  | NewsletterSubSlice
+  | HeadingContentSlice
+  | FeaturesSlice
+  | FeaturedSlice;
 
 /**
  * Content for Page documents
@@ -244,6 +255,78 @@ type FeaturesSliceVariation = FeaturesSliceDefault;
 export type FeaturesSlice = prismic.SharedSlice<
   "features",
   FeaturesSliceVariation
+>;
+
+/**
+ * Primary content in *FrequentAnsweredQuestions → Primary*
+ */
+export interface FrequentAnsweredQuestionsSliceDefaultPrimary {
+  /**
+   * Heading field in *FrequentAnsweredQuestions → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequent_answered_questions.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *FrequentAnsweredQuestions → Items*
+ */
+export interface FrequentAnsweredQuestionsSliceDefaultItem {
+  /**
+   * Question field in *FrequentAnsweredQuestions → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequent_answered_questions.items[].question
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  question: prismic.KeyTextField;
+
+  /**
+   * Answer field in *FrequentAnsweredQuestions → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequent_answered_questions.items[].answer
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  answer: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for FrequentAnsweredQuestions Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FrequentAnsweredQuestionsSliceDefault =
+  prismic.SharedSliceVariation<
+    "default",
+    Simplify<FrequentAnsweredQuestionsSliceDefaultPrimary>,
+    Simplify<FrequentAnsweredQuestionsSliceDefaultItem>
+  >;
+
+/**
+ * Slice variation for *FrequentAnsweredQuestions*
+ */
+type FrequentAnsweredQuestionsSliceVariation =
+  FrequentAnsweredQuestionsSliceDefault;
+
+/**
+ * FrequentAnsweredQuestions Shared Slice
+ *
+ * - **API ID**: `frequent_answered_questions`
+ * - **Description**: FrequentAnsweredQuestions
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FrequentAnsweredQuestionsSlice = prismic.SharedSlice<
+  "frequent_answered_questions",
+  FrequentAnsweredQuestionsSliceVariation
 >;
 
 /**
@@ -544,6 +627,81 @@ export type NewsletterSubSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *PageHero → Primary*
+ */
+export interface PageHeroSliceDefaultPrimary {
+  /**
+   * Heading field in *PageHero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_hero.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *PageHero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_hero.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+
+  /**
+   * Hero Image field in *PageHero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_hero.primary.hero_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  hero_image: prismic.ImageField<never>;
+
+  /**
+   * Tag field in *PageHero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_hero.primary.tag
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tag: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for PageHero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PageHeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PageHeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PageHero*
+ */
+type PageHeroSliceVariation = PageHeroSliceDefault;
+
+/**
+ * PageHero Shared Slice
+ *
+ * - **API ID**: `page_hero`
+ * - **Description**: PageHero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PageHeroSlice = prismic.SharedSlice<
+  "page_hero",
+  PageHeroSliceVariation
+>;
+
+/**
  * Primary content in *ReusuableContent → Primary*
  */
 export interface ReusuableContentSliceDefaultPrimary {
@@ -767,6 +925,11 @@ declare module "@prismicio/client" {
       FeaturesSlice,
       FeaturesSliceVariation,
       FeaturesSliceDefault,
+      FrequentAnsweredQuestionsSlice,
+      FrequentAnsweredQuestionsSliceDefaultPrimary,
+      FrequentAnsweredQuestionsSliceDefaultItem,
+      FrequentAnsweredQuestionsSliceVariation,
+      FrequentAnsweredQuestionsSliceDefault,
       HeadingContentSlice,
       HeadingContentSliceDefaultPrimary,
       HeadingContentSliceVariation,
@@ -782,6 +945,10 @@ declare module "@prismicio/client" {
       NewsletterSubSlice,
       NewsletterSubSliceVariation,
       NewsletterSubSliceDefault,
+      PageHeroSlice,
+      PageHeroSliceDefaultPrimary,
+      PageHeroSliceVariation,
+      PageHeroSliceDefault,
       ReusuableContentSlice,
       ReusuableContentSliceDefaultPrimary,
       ReusuableContentSliceDefaultItem,

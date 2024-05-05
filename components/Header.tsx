@@ -19,12 +19,7 @@ const mobileNav = [
   { navlink: "/contact", navlabel: "Contact" },
 ];
 
-const desktopNav = [
-  { navlink: "/team-members", navlabel: "Our Professionals" },
-  { navlink: "/blogs", navlabel: "Blogs" },
-  { navlink: "/transactions", navlabel: "Transactions" },
-  { navlink: "/contact", navlabel: "Contact" },
-];
+const desktopNav = [{ navlink: "/services", navlabel: "Services" }];
 
 const Header = ({ classname }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,12 +29,12 @@ const Header = ({ classname }: HeaderProps) => {
     <>
       <header
         className={clsx(
-          " px-2 bg-mainB text-white border-b  md:px-4 lg:px-12 py-2 sticky top-0 z-50",
-          classname
+          " sticky top-0 z-50 bg-mainB px-2 py-2 text-white md:px-4 lg:px-12",
+          classname,
         )}
       >
         <nav aria-label="Main-navigation">
-          <ul className="flex flex-col  md:m-4 md:flex-row md:items-center justify-between md:rounded-xl">
+          <ul className="flex flex-col  justify-between md:m-4 md:flex-row md:items-center md:rounded-xl">
             <div className="flex items-center justify-between">
               <NameLogo />
               <button
@@ -52,8 +47,8 @@ const Header = ({ classname }: HeaderProps) => {
             </div>
             <div
               className={clsx(
-                "fixed bottom-0 left-0 right-0 top-0 z-50 flex flex-col items-end gap-4 bg-black text-white pr-4 pt-14  transition-transform duration-300 ease-in-out md:hidden",
-                isOpen ? "translate-x-0" : "translate-x-[100%]"
+                "fixed bottom-0 left-0 right-0 top-0 z-50 flex flex-col items-end gap-4 bg-black pr-4 pt-14 text-white  transition-transform duration-300 ease-in-out md:hidden",
+                isOpen ? "translate-x-0" : "translate-x-[100%]",
               )}
             >
               <button
@@ -73,7 +68,7 @@ const Header = ({ classname }: HeaderProps) => {
                     }}
                     className={clsx(
                       "",
-                      pathname === item.navlink ? "underline" : ""
+                      pathname === item.navlink ? "underline" : "",
                     )}
                   >
                     {item.navlabel}
@@ -97,7 +92,7 @@ function NameLogo({}: {}) {
       <Link
         href="/"
         aria-label="Home page"
-        className="text-3xl md:text-4xl font-bold text-mainC"
+        className="text-mainC text-3xl font-bold md:text-4xl"
       >
         Helping CPAs
       </Link>
@@ -115,10 +110,10 @@ function DesktopMenu() {
             href={item.navlink}
             key={index}
             className={clsx(
-              "font-bold hover:underline-offset-8 hover:text-mainC hover:underline  hover:decoration-4 hover:decoration-mainC transition",
+              "hover:text-mainC hover:decoration-mainC font-bold transition  hover:underline hover:decoration-4 hover:underline-offset-8",
               pathname === item.navlink
-                ? "text-mainC underline-offset-8 underline decoration-4"
-                : ""
+                ? "text-mainC underline decoration-4 underline-offset-8"
+                : "",
             )}
           >
             {item.navlabel}

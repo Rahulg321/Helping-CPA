@@ -133,6 +133,10 @@ h6 {
   width: min(80%, 55.5rem);
 }
 
+.block-space-large {
+  padding-block: min(9vh, 14rem);
+}
+
 .block-space {
   padding-block: min(6vh, 10rem);
 }

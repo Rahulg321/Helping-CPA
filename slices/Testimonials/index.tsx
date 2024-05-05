@@ -18,11 +18,11 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
       className="block-space"
     >
       <div className="big-container">
-        <div className="text-center mb-8">
+        <div className="mb-8 text-center">
           <h1 className="mb-4">{slice.primary.heading}</h1>
           <p>{slice.primary.tagline}</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
           <TestimonialCard />
           <TestimonialCard />
           <TestimonialCard />

@@ -5,10 +5,14 @@ import dynamic from "next/dynamic";
 export const components = {
   featured: dynamic(() => import("./Featured")),
   features: dynamic(() => import("./Features")),
+  frequent_answered_questions: dynamic(
+    () => import("./FrequentAnsweredQuestions"),
+  ),
   heading_content: dynamic(() => import("./HeadingContent")),
   hero: dynamic(() => import("./Hero")),
   image_content: dynamic(() => import("./ImageContent")),
   newsletter_sub: dynamic(() => import("./NewsletterSub")),
+  page_hero: dynamic(() => import("./PageHero")),
   reusuable_content: dynamic(() => import("./ReusuableContent")),
   solutions: dynamic(() => import("./Solutions")),
   testimonials: dynamic(() => import("./Testimonials")),

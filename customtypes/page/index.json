@@ -1,6 +1,9 @@
 {
   "format": "page",
   "id": "page",
+  "label": "Page",
+  "repeatable": true,
+  "status": true,
   "json": {
     "Main": {
       "uid": {
@@ -10,11 +13,45 @@
         "type": "UID"
       },
       "slices": {
-        "config": {
-          "choices": {}
-        },
+        "type": "Slices",
         "fieldset": "Slice Zone",
-        "type": "Slices"
+        "config": {
+          "choices": {
+            "frequent_answered_questions": {
+              "type": "SharedSlice"
+            },
+            "testimonials": {
+              "type": "SharedSlice"
+            },
+            "reusuable_content": {
+              "type": "SharedSlice"
+            },
+            "image_content": {
+              "type": "SharedSlice"
+            },
+            "solutions": {
+              "type": "SharedSlice"
+            },
+            "page_hero": {
+              "type": "SharedSlice"
+            },
+            "hero": {
+              "type": "SharedSlice"
+            },
+            "newsletter_sub": {
+              "type": "SharedSlice"
+            },
+            "heading_content": {
+              "type": "SharedSlice"
+            },
+            "features": {
+              "type": "SharedSlice"
+            },
+            "featured": {
+              "type": "SharedSlice"
+            }
+          }
+        }
       }
     },
     "SEO & Metadata": {
@@ -44,8 +81,5 @@
         "type": "Text"
       }
     }
-  },
-  "label": "Page",
-  "repeatable": true,
-  "status": true
+  }
 }

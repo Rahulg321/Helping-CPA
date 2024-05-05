@@ -1,0 +1,36 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "number",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"question",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "nation",
+							"type": "Text"
+						}
+					],
+					[
+						"answer",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "shoulder",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]
