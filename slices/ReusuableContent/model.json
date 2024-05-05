@@ -1,0 +1,58 @@
+{
+  "id": "reusuable_content",
+  "type": "SharedSlice",
+  "name": "ReusuableContent",
+  "description": "ReusuableContent",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "tagline": {
+          "type": "Text",
+          "config": {
+            "label": "Tagline",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "featuredimage": {
+          "type": "Image",
+          "config": {
+            "label": "featuredImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Image Heading",
+            "placeholder": ""
+          }
+        },
+        "image_content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Image Content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      }
+    }
+  ]
+}

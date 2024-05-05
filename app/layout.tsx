@@ -20,12 +20,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={clsx(montserrat.variable, hind.variable)}>
-      <head>
-        <meta
-          name="google-site-verification"
-          content="8pP_lJBKWWCw5FpUWOGsVYea4jHoZ4bVNitNrYCI_EU"
-        />
-      </head>
       <body className={clsx("min-h-screen bg-background antialiased")}>
         <main className="parent-container">
           <Header />

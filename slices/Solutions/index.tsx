@@ -2,26 +2,25 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
 /**
- * Props for `Hero`.
+ * Props for `Solutions`.
  */
-export type HeroProps = SliceComponentProps<Content.HeroSlice>;
+export type SolutionsProps = SliceComponentProps<Content.SolutionsSlice>;
 
 /**
- * Component for "Hero" Slices.
+ * Component for "Solutions" Slices.
  */
-const Hero = ({ slice }: HeroProps): JSX.Element => {
+const Solutions = ({ slice }: SolutionsProps): JSX.Element => {
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-mainB block-space text-white"
+      className="block-space"
     >
       <div className="big-container">
         <h1>{slice.primary.heading}</h1>
-        <span>{slice.primary.tagline}</span>
       </div>
     </section>
   );
 };
 
-export default Hero;
+export default Solutions;

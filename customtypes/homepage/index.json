@@ -11,6 +11,30 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "features": {
+              "type": "SharedSlice"
+            },
+            "reusuable_content": {
+              "type": "SharedSlice"
+            },
+            "heading_content": {
+              "type": "SharedSlice"
+            },
+            "image_content": {
+              "type": "SharedSlice"
+            },
+            "testimonials": {
+              "type": "SharedSlice"
+            },
+            "featured": {
+              "type": "SharedSlice"
+            },
+            "solutions": {
+              "type": "SharedSlice"
+            },
+            "newsletter_sub": {
+              "type": "SharedSlice"
+            },
             "hero": {
               "type": "SharedSlice"
             }

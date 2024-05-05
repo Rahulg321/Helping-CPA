@@ -1,0 +1,16 @@
+{
+  "id": "newsletter_sub",
+  "type": "SharedSlice",
+  "name": "NewsletterSub",
+  "description": "NewsletterSub",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

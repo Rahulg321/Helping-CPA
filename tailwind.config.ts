@@ -1,14 +1,18 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    "./slices/**/*.{ts,tsx}",
+  ],
   prefix: "",
+  corePlugins: {
+    aspectRatio: false,
+  },
   theme: {
     container: {
       center: true,
@@ -20,6 +24,9 @@ const config = {
     extend: {
       colors: {
         border: "hsl(var(--border))",
+        mainB: "var(--dark-blue)",
+        mainG: "var(--main-green)",
+        mainY: "var(--main-yellow)",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
@@ -74,7 +81,11 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
+} satisfies Config;
 
-export default config
+export default config;

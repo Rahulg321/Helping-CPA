@@ -3,5 +3,13 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  featured: dynamic(() => import("./Featured")),
+  features: dynamic(() => import("./Features")),
+  heading_content: dynamic(() => import("./HeadingContent")),
   hero: dynamic(() => import("./Hero")),
+  image_content: dynamic(() => import("./ImageContent")),
+  newsletter_sub: dynamic(() => import("./NewsletterSub")),
+  reusuable_content: dynamic(() => import("./ReusuableContent")),
+  solutions: dynamic(() => import("./Solutions")),
+  testimonials: dynamic(() => import("./Testimonials")),
 };

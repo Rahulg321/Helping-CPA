@@ -1,0 +1,33 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"dark_background": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "tears",
+				"type": "Text"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Amet ullamco officia exercitation excepteur ad tempor ipsum tempor magna."
+						}
+					}
+				]
+			},
+			"small_width": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			}
+		},
+		"items": []
+	}
+]
