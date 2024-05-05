@@ -24,8 +24,10 @@ const config = {
     extend: {
       colors: {
         border: "hsl(var(--border))",
+        lightB: "var(--light-blue)",
         mainB: "var(--dark-blue)",
         mainG: "var(--main-green)",
+        lightG: "var(--light-green)",
         mainY: "var(--main-yellow)",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

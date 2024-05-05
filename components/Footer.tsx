@@ -7,7 +7,7 @@ import { FaInstagram } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="block-space bg-mainB text-white flex justify-around px-8">
+    <footer className="block-space flex justify-around bg-mainB px-8 text-white">
       <div>
         <h3 className="mb-4">Helping CPAs</h3>
         <span className="text-lg">
@@ -21,7 +21,7 @@ const Footer = () => {
             <Link
               href={e.navlink}
               key={index}
-              className="block text-lg mb-4 font-semibold"
+              className="mb-4 block text-lg font-semibold"
             >
               {e.navlabel}
             </Link>
@@ -34,7 +34,7 @@ const Footer = () => {
             <Link
               href={e.navlink}
               key={index}
-              className="block text-lg mb-4 font-semibold"
+              className="mb-4 block text-lg font-semibold"
             >
               {e.navlabel}
             </Link>
@@ -65,6 +65,8 @@ type SocialMediaIconProps = {
 
 function SocialMediaIcon({ icon }: SocialMediaIconProps) {
   return (
-    <div className="text-white text-3xl border rounded-full p-4">{icon}</div>
+    <div className="cursor-pointer rounded-full border p-4 text-3xl text-white transition hover:text-yellow-400">
+      {icon}
+    </div>
   );
 }

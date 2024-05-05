@@ -17,6 +17,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "full_width_quote": {
+              "type": "SharedSlice"
+            },
+            "full_width_featured": {
+              "type": "SharedSlice"
+            },
             "reusable_card_slice": {
               "type": "SharedSlice"
             },

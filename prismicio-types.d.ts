@@ -79,6 +79,8 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | FullWidthQuoteSlice
+  | FullWidthFeaturedSlice
   | ReusableCardSliceSlice
   | FrequentAnsweredQuestionsSlice
   | TestimonialsSlice
@@ -328,6 +330,111 @@ type FrequentAnsweredQuestionsSliceVariation =
 export type FrequentAnsweredQuestionsSlice = prismic.SharedSlice<
   "frequent_answered_questions",
   FrequentAnsweredQuestionsSliceVariation
+>;
+
+/**
+ * Primary content in *FullWidthFeatured → Primary*
+ */
+export interface FullWidthFeaturedSliceDefaultPrimary {
+  /**
+   * Heading field in *FullWidthFeatured → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: full_width_featured.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *FullWidthFeatured → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: full_width_featured.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+
+  /**
+   * Button Label field in *FullWidthFeatured → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: full_width_featured.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *FullWidthFeatured → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: full_width_featured.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for FullWidthFeatured Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FullWidthFeaturedSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FullWidthFeaturedSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FullWidthFeatured*
+ */
+type FullWidthFeaturedSliceVariation = FullWidthFeaturedSliceDefault;
+
+/**
+ * FullWidthFeatured Shared Slice
+ *
+ * - **API ID**: `full_width_featured`
+ * - **Description**: FullWidthFeatured
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FullWidthFeaturedSlice = prismic.SharedSlice<
+  "full_width_featured",
+  FullWidthFeaturedSliceVariation
+>;
+
+/**
+ * Default variation for FullWidthQuote Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FullWidthQuoteSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *FullWidthQuote*
+ */
+type FullWidthQuoteSliceVariation = FullWidthQuoteSliceDefault;
+
+/**
+ * FullWidthQuote Shared Slice
+ *
+ * - **API ID**: `full_width_quote`
+ * - **Description**: FullWidthQuote
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FullWidthQuoteSlice = prismic.SharedSlice<
+  "full_width_quote",
+  FullWidthQuoteSliceVariation
 >;
 
 /**
@@ -1011,6 +1118,13 @@ declare module "@prismicio/client" {
       FrequentAnsweredQuestionsSliceDefaultItem,
       FrequentAnsweredQuestionsSliceVariation,
       FrequentAnsweredQuestionsSliceDefault,
+      FullWidthFeaturedSlice,
+      FullWidthFeaturedSliceDefaultPrimary,
+      FullWidthFeaturedSliceVariation,
+      FullWidthFeaturedSliceDefault,
+      FullWidthQuoteSlice,
+      FullWidthQuoteSliceVariation,
+      FullWidthQuoteSliceDefault,
       HeadingContentSlice,
       HeadingContentSliceDefaultPrimary,
       HeadingContentSliceVariation,

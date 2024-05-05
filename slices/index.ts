@@ -8,6 +8,8 @@ export const components = {
   frequent_answered_questions: dynamic(
     () => import("./FrequentAnsweredQuestions"),
   ),
+  full_width_featured: dynamic(() => import("./FullWidthFeatured")),
+  full_width_quote: dynamic(() => import("./FullWidthQuote")),
   heading_content: dynamic(() => import("./HeadingContent")),
   hero: dynamic(() => import("./Hero")),
   image_content: dynamic(() => import("./ImageContent")),
