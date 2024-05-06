@@ -12,14 +12,14 @@ import { IoMdStar } from "react-icons/io";
 
 type TestimonialCardProps = {
   name: KeyTextField | string;
-  review: string;
+  review: KeyTextField | string;
 };
 
-const TestimonialCard = () => {
+const TestimonialCard = ({ name, review }: TestimonialCardProps) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Jon Snow</CardTitle>
+        <CardTitle>{name}</CardTitle>
         <div className="flex gap-2">
           <TestimonialStar />
           <TestimonialStar />
@@ -29,11 +29,7 @@ const TestimonialCard = () => {
         </div>
       </CardHeader>
       <CardContent>
-        <p>
-          Paro offered refreshing ideas for how to streamline our operations to
-          make them more efficient. Their team was consistently helpful,
-          intelligent and thoughtful.
-        </p>
+        <p>{review}</p>
       </CardContent>
     </Card>
   );
@@ -41,7 +37,7 @@ const TestimonialCard = () => {
 
 export default TestimonialCard;
 
-function TestimonialStar() {
+export function TestimonialStar() {
   return (
     <div className="text-3xl text-yellow-500">
       <IoMdStar />

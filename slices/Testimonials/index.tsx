@@ -23,9 +23,9 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
           <p>{slice.primary.tagline}</p>
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-          <TestimonialCard />
-          <TestimonialCard />
-          <TestimonialCard />
+          {slice.items.map((e, index) => {
+            return <TestimonialCard name={e.name} review={e.review} />;
+          })}
         </div>
       </div>
     </section>

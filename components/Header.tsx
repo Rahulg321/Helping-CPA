@@ -5,21 +5,25 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { MdMenu, MdClose } from "react-icons/md";
+import NavigationHeader from "./NavigationHeader";
 
 type HeaderProps = {
   classname?: string;
 };
 
 const mobileNav = [
-  { navlink: "/", navlabel: "Home" },
-  { navlink: "/practice-areas", navlabel: "Practice Areas" },
-  { navlink: "/our-firm", navlabel: "Our Firm" },
-  { navlink: "/team-members", navlabel: "Team" },
-  { navlink: "/blogs", navlabel: "Blog" },
-  { navlink: "/contact", navlabel: "Contact" },
+  { navlink: "/services", navlabel: "Services" },
+  { navlink: "/who-we-are", navlabel: "Who We Are" },
+  { navlink: "/what-we-do", navlabel: "What Do We Do" },
 ];
 
-const desktopNav = [{ navlink: "/services", navlabel: "Services" }];
+const desktopNav = [
+  { navlink: "/services", navlabel: "Services" },
+  { navlink: "/blog", navlabel: "Blog" },
+  { navlink: "/who-we-are", navlabel: "Who We Are" },
+  { navlink: "/what-we-do", navlabel: "What We Do" },
+  { navlink: "/contact-us", navlabel: "Contact Us" },
+];
 
 const Header = ({ classname }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +33,7 @@ const Header = ({ classname }: HeaderProps) => {
     <>
       <header
         className={clsx(
-          " sticky top-0 z-50 bg-mainB px-2 py-2 text-white md:px-4 lg:px-12",
+          "sticky top-0 z-50 bg-mainB px-2 py-2 text-white md:px-4 lg:px-12",
           classname,
         )}
       >
@@ -104,15 +108,16 @@ function DesktopMenu() {
   const pathname = usePathname();
   return (
     <div className="hidden gap-8 md:flex md:items-center">
+      <NavigationHeader />
       {desktopNav.map((item, index) => {
         return (
           <Link
             href={item.navlink}
             key={index}
             className={clsx(
-              "hover:text-mainC hover:decoration-mainC font-bold transition  hover:underline hover:decoration-4 hover:underline-offset-8",
+              "font-bold transition  hover:underline hover:decoration-4 hover:underline-offset-8",
               pathname === item.navlink
-                ? "text-mainC underline decoration-4 underline-offset-8"
+                ? "underline decoration-4 underline-offset-8"
                 : "",
             )}
           >

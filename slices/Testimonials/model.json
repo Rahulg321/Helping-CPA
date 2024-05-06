@@ -27,7 +27,22 @@
           }
         }
       },
-      "items": {}
+      "items": {
+        "name": {
+          "type": "Text",
+          "config": {
+            "label": "Name",
+            "placeholder": ""
+          }
+        },
+        "review": {
+          "type": "Text",
+          "config": {
+            "label": "Review",
+            "placeholder": ""
+          }
+        }
+      }
     }
   ]
 }

@@ -1,0 +1,41 @@
+{
+  "id": "recommended_reading",
+  "type": "SharedSlice",
+  "name": "RecommendedReading",
+  "description": "RecommendedReading",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "article_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Article Heading",
+            "placeholder": ""
+          }
+        },
+        "article_description": {
+          "type": "Text",
+          "config": {
+            "label": "Article Description",
+            "placeholder": ""
+          }
+        },
+        "article_link": {
+          "type": "Link",
+          "config": {
+            "label": "Article Link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      }
+    }
+  ]
+}

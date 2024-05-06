@@ -16,9 +16,11 @@ export const components = {
   image_content: dynamic(() => import("./ImageContent")),
   newsletter_sub: dynamic(() => import("./NewsletterSub")),
   page_hero: dynamic(() => import("./PageHero")),
+  recommended_reading: dynamic(() => import("./RecommendedReading")),
   reusable_card_slice: dynamic(() => import("./ReusableCardSlice")),
   reusuable_content: dynamic(() => import("./ReusuableContent")),
   solutions: dynamic(() => import("./Solutions")),
   stats: dynamic(() => import("./Stats")),
   testimonials: dynamic(() => import("./Testimonials")),
+  text_block: dynamic(() => import("./TextBlock")),
 };

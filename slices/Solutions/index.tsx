@@ -73,12 +73,23 @@ const accoutingCards = [
     tagline:
       "Cover a sudden vacancy or meet niche and complex client advisory services.",
   },
+  {
+    icon: <PiRoadHorizonFill />,
+    heading: "Roadmap for Growth",
+    tagline:
+      "Entering a new market? Eyeing an acquisition? Bring on expertise from your industry.",
+  },
+  {
+    icon: <RiLightbulbFlashLine />,
+    heading: "Strengthen Decision Making",
+    tagline:
+      "Boost your forecasting, reporting and analytics to improve cash flow and identify risk or opportunity.",
+  },
 ];
 
 const Solutions = ({ slice }: SolutionsProps): JSX.Element => {
   let selectedCards = [];
   const [cards, setCards] = useState("business");
-
   if (cards === "business") {
     selectedCards = businessCards;
   } else {

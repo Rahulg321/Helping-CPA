@@ -1,7 +1,7 @@
 {
   "format": "page",
-  "id": "page",
-  "label": "Page",
+  "id": "service",
+  "label": "Service",
   "repeatable": true,
   "status": true,
   "json": {
@@ -24,16 +24,19 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "text_block": {
+            "featured": {
               "type": "SharedSlice"
             },
-            "recommended_reading": {
-              "type": "SharedSlice"
-            },
-            "stats": {
+            "features": {
               "type": "SharedSlice"
             },
             "check_image_content": {
+              "type": "SharedSlice"
+            },
+            "heading_content": {
+              "type": "SharedSlice"
+            },
+            "hero": {
               "type": "SharedSlice"
             },
             "full_width_quote": {
@@ -42,40 +45,37 @@
             "full_width_featured": {
               "type": "SharedSlice"
             },
-            "reusable_card_slice": {
-              "type": "SharedSlice"
-            },
             "frequent_answered_questions": {
-              "type": "SharedSlice"
-            },
-            "testimonials": {
-              "type": "SharedSlice"
-            },
-            "reusuable_content": {
               "type": "SharedSlice"
             },
             "image_content": {
               "type": "SharedSlice"
             },
-            "solutions": {
+            "recommended_reading": {
               "type": "SharedSlice"
             },
             "page_hero": {
               "type": "SharedSlice"
             },
-            "hero": {
-              "type": "SharedSlice"
-            },
             "newsletter_sub": {
               "type": "SharedSlice"
             },
-            "heading_content": {
+            "reusable_card_slice": {
               "type": "SharedSlice"
             },
-            "features": {
+            "reusuable_content": {
               "type": "SharedSlice"
             },
-            "featured": {
+            "solutions": {
+              "type": "SharedSlice"
+            },
+            "text_block": {
+              "type": "SharedSlice"
+            },
+            "testimonials": {
+              "type": "SharedSlice"
+            },
+            "stats": {
               "type": "SharedSlice"
             }
           }

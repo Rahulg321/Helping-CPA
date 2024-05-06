@@ -18,7 +18,7 @@ type FeatureCardProps = {
 
 const FeatureCard = ({ icon, heading, description }: FeatureCardProps) => {
   return (
-    <Card>
+    <Card className="bg-[#F1F5F9]">
       <CardHeader>
         <CardTitle className="text-5xl text-mainG">
           <div className="">{icon}</div>

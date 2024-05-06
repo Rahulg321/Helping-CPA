@@ -2,36 +2,35 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {
-			"heading": {
-				"__TYPE__": "FieldContent",
-				"value": "unless",
-				"type": "Text"
-			},
-			"tagline": {
-				"__TYPE__": "FieldContent",
-				"value": "nor",
-				"type": "Text"
-			}
-		},
+		"primary": {},
 		"items": [
 			{
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"name",
+						"article_heading",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "exact",
+							"value": "impossible",
 							"type": "Text"
 						}
 					],
 					[
-						"review",
+						"article_description",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "frequently",
+							"value": "near",
 							"type": "Text"
+						}
+					],
+					[
+						"article_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://twitter.com"
+							}
 						}
 					]
 				]
