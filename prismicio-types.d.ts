@@ -155,6 +155,9 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ContactInfoSectionSlice
+  | GoogleMapsSectionSlice
+  | ContactFormSectionSlice
   | TextBlockSlice
   | RecommendedReadingSlice
   | StatsSlice
@@ -454,6 +457,66 @@ type CheckImageContentSliceVariation = CheckImageContentSliceDefault;
 export type CheckImageContentSlice = prismic.SharedSlice<
   "check_image_content",
   CheckImageContentSliceVariation
+>;
+
+/**
+ * Default variation for ContactFormSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactFormSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *ContactFormSection*
+ */
+type ContactFormSectionSliceVariation = ContactFormSectionSliceDefault;
+
+/**
+ * ContactFormSection Shared Slice
+ *
+ * - **API ID**: `contact_form_section`
+ * - **Description**: ContactFormSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactFormSectionSlice = prismic.SharedSlice<
+  "contact_form_section",
+  ContactFormSectionSliceVariation
+>;
+
+/**
+ * Default variation for ContactInfoSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactInfoSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *ContactInfoSection*
+ */
+type ContactInfoSectionSliceVariation = ContactInfoSectionSliceDefault;
+
+/**
+ * ContactInfoSection Shared Slice
+ *
+ * - **API ID**: `contact_info_section`
+ * - **Description**: ContactInfoSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactInfoSectionSlice = prismic.SharedSlice<
+  "contact_info_section",
+  ContactInfoSectionSliceVariation
 >;
 
 /**
@@ -786,6 +849,61 @@ type FullWidthQuoteSliceVariation = FullWidthQuoteSliceDefault;
 export type FullWidthQuoteSlice = prismic.SharedSlice<
   "full_width_quote",
   FullWidthQuoteSliceVariation
+>;
+
+/**
+ * Primary content in *GoogleMapsSection → Primary*
+ */
+export interface GoogleMapsSectionSliceDefaultPrimary {
+  /**
+   * Heading field in *GoogleMapsSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: google_maps_section.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *GoogleMapsSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: google_maps_section.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for GoogleMapsSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GoogleMapsSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<GoogleMapsSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *GoogleMapsSection*
+ */
+type GoogleMapsSectionSliceVariation = GoogleMapsSectionSliceDefault;
+
+/**
+ * GoogleMapsSection Shared Slice
+ *
+ * - **API ID**: `google_maps_section`
+ * - **Description**: GoogleMapsSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GoogleMapsSectionSlice = prismic.SharedSlice<
+  "google_maps_section",
+  GoogleMapsSectionSliceVariation
 >;
 
 /**
@@ -1711,6 +1829,12 @@ declare module "@prismicio/client" {
       CheckImageContentSliceDefaultItem,
       CheckImageContentSliceVariation,
       CheckImageContentSliceDefault,
+      ContactFormSectionSlice,
+      ContactFormSectionSliceVariation,
+      ContactFormSectionSliceDefault,
+      ContactInfoSectionSlice,
+      ContactInfoSectionSliceVariation,
+      ContactInfoSectionSliceDefault,
       FeaturedSlice,
       FeaturedSliceDefaultPrimary,
       FeaturedSliceVariation,
@@ -1732,6 +1856,10 @@ declare module "@prismicio/client" {
       FullWidthQuoteSliceDefaultPrimary,
       FullWidthQuoteSliceVariation,
       FullWidthQuoteSliceDefault,
+      GoogleMapsSectionSlice,
+      GoogleMapsSectionSliceDefaultPrimary,
+      GoogleMapsSectionSliceVariation,
+      GoogleMapsSectionSliceDefault,
       HeadingContentSlice,
       HeadingContentSliceDefaultPrimary,
       HeadingContentSliceVariation,

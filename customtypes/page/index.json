@@ -24,6 +24,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "contact_info_section": {
+              "type": "SharedSlice"
+            },
+            "google_maps_section": {
+              "type": "SharedSlice"
+            },
+            "contact_form_section": {
+              "type": "SharedSlice"
+            },
             "text_block": {
               "type": "SharedSlice"
             },

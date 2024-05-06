@@ -18,7 +18,6 @@ const mobileNav = [
 ];
 
 const desktopNav = [
-  { navlink: "/services", navlabel: "Services" },
   { navlink: "/blog", navlabel: "Blog" },
   { navlink: "/who-we-are", navlabel: "Who We Are" },
   { navlink: "/what-we-do", navlabel: "What We Do" },
@@ -38,7 +37,7 @@ const Header = ({ classname }: HeaderProps) => {
         )}
       >
         <nav aria-label="Main-navigation">
-          <ul className="flex flex-col  justify-between md:m-4 md:flex-row md:items-center md:rounded-xl">
+          <ul className="flex flex-col  justify-around md:m-4 md:flex-row md:items-center md:rounded-xl">
             <div className="flex items-center justify-between">
               <NameLogo />
               <button
