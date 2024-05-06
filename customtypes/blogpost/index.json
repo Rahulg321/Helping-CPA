@@ -19,6 +19,28 @@
         },
         "type": "UID"
       },
+      "author": {
+        "type": "Text",
+        "config": {
+          "label": "Author",
+          "placeholder": ""
+        }
+      },
+      "featured_image": {
+        "type": "Image",
+        "config": {
+          "label": "Featured Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "date_published": {
+        "type": "Date",
+        "config": {
+          "label": "Date Published",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

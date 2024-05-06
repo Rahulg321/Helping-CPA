@@ -22,6 +22,39 @@ interface BlogpostDocumentData {
   name: prismic.KeyTextField;
 
   /**
+   * Author field in *Blogpost*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogpost.author
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  author: prismic.KeyTextField;
+
+  /**
+   * Featured Image field in *Blogpost*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogpost.featured_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  featured_image: prismic.ImageField<never>;
+
+  /**
+   * Date Published field in *Blogpost*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogpost.date_published
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  date_published: prismic.DateField;
+
+  /**
    * Slice Zone field in *Blogpost*
    *
    * - **Field Type**: Slice Zone
@@ -155,6 +188,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | BlogIndexSlice
   | ContactInfoSectionSlice
   | GoogleMapsSectionSlice
   | ContactFormSectionSlice
@@ -346,6 +380,36 @@ export type AllDocumentTypes =
   | HomepageDocument
   | PageDocument
   | ServiceDocument;
+
+/**
+ * Default variation for BlogIndex Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogIndexSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *BlogIndex*
+ */
+type BlogIndexSliceVariation = BlogIndexSliceDefault;
+
+/**
+ * BlogIndex Shared Slice
+ *
+ * - **API ID**: `blog_index`
+ * - **Description**: BlogIndex
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogIndexSlice = prismic.SharedSlice<
+  "blog_index",
+  BlogIndexSliceVariation
+>;
 
 /**
  * Primary content in *CheckImageContent → Primary*
@@ -1824,6 +1888,9 @@ declare module "@prismicio/client" {
       ServiceDocumentData,
       ServiceDocumentDataSlicesSlice,
       AllDocumentTypes,
+      BlogIndexSlice,
+      BlogIndexSliceVariation,
+      BlogIndexSliceDefault,
       CheckImageContentSlice,
       CheckImageContentSliceDefaultPrimary,
       CheckImageContentSliceDefaultItem,
