@@ -3,15 +3,15 @@ import React from "react";
 const ContactForm = () => {
   return (
     <div className="">
-      <form action="" className="grid grid-cols-2 gap-8">
+      <form action="" className="grid grid-cols-2 gap-4">
         <input
           type="email"
-          className="rounded-full border-none bg-lightG p-4 text-xl"
+          className="col-span-2 rounded-full border-none bg-lightG p-4 text-xl md:col-span-1"
           placeholder="email"
         />
         <input
           type="text"
-          className="rounded-full border-none bg-lightG p-4 text-xl"
+          className="col-span-2 rounded-full border-none bg-lightG p-4 text-xl md:col-span-1"
           placeholder="phone number"
         />
         <input

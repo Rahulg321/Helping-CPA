@@ -21,7 +21,7 @@ const ContactInfoCard = ({
     >
       <div className="mb-4 flex items-center gap-4">
         <div className="text-4xl">{icon}</div>
-        <h3>{cardHeading}</h3>
+        <h3 className="text-lg  lg:text-2xl">{cardHeading}</h3>
       </div>
       <p>{cardDescription}</p>
     </div>

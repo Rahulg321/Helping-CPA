@@ -28,7 +28,7 @@ const ContactFormSection = ({
             </div>
             <ContactForm />
           </div>
-          <div className="rounded-2xl bg-lightG p-4">
+          <div className="h-fit space-y-4 rounded-2xl bg-lightG px-4 py-8">
             <h2>Our Newsletter</h2>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -36,6 +36,15 @@ const ContactFormSection = ({
               iusto facilis exercitationem similique blanditiis asperiores
               alias, amet voluptas dicta voluptatibus ullam ad ipsum!
             </p>
+            <input
+              type="email"
+              className="block w-full rounded-full p-2 md:p-4"
+              placeholder="email"
+              name="email"
+            />
+            <button className="w-full rounded-full bg-black p-2 text-white md:p-4">
+              Subscribe
+            </button>
           </div>
         </div>
       </div>
