@@ -17,31 +17,33 @@ const ReusuableContent = ({ slice }: ReusuableContentProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="block-space"
+      className="block-space-large"
     >
       <div className="big-container">
-        <h1 className="mb-4">{slice.primary.heading}</h1>
-        <p className="mb-8">{slice.primary.tagline}</p>
+        <div className="narrow-container mb-6 text-pretty">
+          <h2 className="mb-4 text-center md:mb-6">{slice.primary.heading}</h2>
+          <span className="block text-center md:text-lg">
+            {slice.primary.tagline}
+          </span>
+        </div>
 
         {slice.items.map((e, index) => {
           return (
             <div
               key={index}
               className={clsx(
-                "mb-12 flex flex-col items-center even:flex-row-reverse md:flex-row",
-                {},
+                "mb-12 flex flex-col items-center gap-4 md:flex-row md:even:flex-row-reverse",
               )}
             >
-              <div className="aspect-h-1 aspect-w-4 relative basis-1/2">
+              <div className="p-4 md:p-6 lg:p-8">
                 <PrismicNextImage
                   field={e.featuredimage}
-                  fill
                   className="object-cover"
                 />
               </div>
-              <div className="basis-1/2">
+              <div className="p-4">
                 <h3 className="mb-2">{e.image_heading}</h3>
-                <div className="prose">
+                <div className="prose prose-sm prose-p:text-sm md:prose-p:text-lg">
                   <PrismicRichText field={e.image_content} />
                 </div>
               </div>

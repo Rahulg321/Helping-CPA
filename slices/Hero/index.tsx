@@ -15,18 +15,17 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="block-space-large bg-vercel bg-mainB text-white"
+      className="block-space-large bg-vercel min-h-[70dvh] bg-mainB text-white"
     >
-      <div className="big-container">
-        <div className="grid grid-cols-3">
-          <div className="col-span-2 text-pretty">
-            <h1 className="mb-4 font-semibold">{slice.primary.heading}</h1>
-            <span className="text-2xl">{slice.primary.tagline}</span>
-            <button className="mt-4 block border-4 border-mainG px-4 py-4 text-lg text-mainG text-white">
-              Schedule A Consultation
-            </button>
-          </div>
-          <div></div>
+      <div className="narrow-container">
+        <div className="text-pretty">
+          <h1 className="text-5xl font-semibold leading-snug">
+            {slice.primary.heading}
+          </h1>
+          <p className="text-xl">{slice.primary.tagline}</p>
+          <button className="mt-6 border-4 border-mainG p-4 text-mainG text-white">
+            Schedule A Consultations
+          </button>
         </div>
       </div>
     </section>

@@ -14,6 +14,28 @@
 				"type": "Text"
 			}
 		},
-		"items": []
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"card_heading",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "personal",
+							"type": "Text"
+						}
+					],
+					[
+						"card_description",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "engine",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
 	}
 ]

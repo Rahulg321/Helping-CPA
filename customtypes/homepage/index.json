@@ -11,6 +11,48 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "google_maps_section": {
+              "type": "SharedSlice"
+            },
+            "page_hero": {
+              "type": "SharedSlice"
+            },
+            "stats": {
+              "type": "SharedSlice"
+            },
+            "text_block": {
+              "type": "SharedSlice"
+            },
+            "check_image_content": {
+              "type": "SharedSlice"
+            },
+            "reusable_card_slice": {
+              "type": "SharedSlice"
+            },
+            "full_width_quote": {
+              "type": "SharedSlice"
+            },
+            "full_width_featured": {
+              "type": "SharedSlice"
+            },
+            "recommended_reading": {
+              "type": "SharedSlice"
+            },
+            "frequent_answered_questions": {
+              "type": "SharedSlice"
+            },
+            "contact_info_section": {
+              "type": "SharedSlice"
+            },
+            "contact_form_section": {
+              "type": "SharedSlice"
+            },
+            "quote_content": {
+              "type": "SharedSlice"
+            },
+            "blog_index": {
+              "type": "SharedSlice"
+            },
             "features": {
               "type": "SharedSlice"
             },

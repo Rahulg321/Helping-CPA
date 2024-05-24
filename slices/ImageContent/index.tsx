@@ -21,13 +21,13 @@ const ImageContent = ({ slice }: ImageContentProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={clsx("block-space text-white", {
+      className={clsx("block-space-large bg-enhanceAi text-white", {
         "bg-mainB": darkBackground === true,
       })}
     >
       <div className="big-container">
         <div
-          className={clsx("flex flex-col items-center md:flex-row gap-12", {
+          className={clsx("flex flex-col items-center gap-12 md:flex-row", {
             "md:flex-row-reverse": rightImage === true,
           })}
         >
@@ -35,8 +35,15 @@ const ImageContent = ({ slice }: ImageContentProps): JSX.Element => {
             <PrismicNextImage field={slice.primary.featured_image} />
           </div>
           <div className="basis-2/3">
-            <h1 className="mb-6">{slice.primary.heading}</h1>
-            <div className="prose mb-8 w-full max-w-none text-pretty prose-p:text-white">
+            <h2 className="mb-6">{slice.primary.heading}</h2>
+            <div
+              className={clsx(
+                "prose mb-8 w-full max-w-none text-pretty prose-p:text-white",
+                {
+                  "prose-ul:text-white": darkBackground === true,
+                },
+              )}
+            >
               <PrismicRichText field={slice.primary.content} />
             </div>
             <PrismicNextLink

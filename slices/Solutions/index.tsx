@@ -100,12 +100,12 @@ const Solutions = ({ slice }: SolutionsProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="block-space"
+      className="block-space-large"
     >
       <div className="big-container">
-        <h1 className="mb-4">{slice.primary.heading}</h1>
+        <h2 className="mb-12 text-center">{slice.primary.heading}</h2>
 
-        <div className="grid grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-3">
           <div className="col-span-1">
             {selectCards.map((item, index) => {
               return (
@@ -125,7 +125,7 @@ const Solutions = ({ slice }: SolutionsProps): JSX.Element => {
               );
             })}
           </div>
-          <div className="col-span-2 grid grid-cols-2 gap-4 p-4">
+          <div className="grid grid-cols-1 gap-4 p-4 md:col-span-2 md:grid-cols-2 md:gap-8">
             {selectedCards.map((e, index) => {
               return (
                 <SolutionCard

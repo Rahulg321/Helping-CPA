@@ -27,21 +27,16 @@ const Features = ({ slice }: FeaturesProps): JSX.Element => {
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          <FeatureCard
-            icon={<PiLightningAFill />}
-            heading="Pre-vetted, U.S.-based Experts"
-            description="Only 2% of candidates pass our strict six-step vetting process. You’ll never waste time considering people who aren’t up to the job."
-          />
-          <FeatureCard
-            icon={<IoIosRibbon />}
-            heading="Lightning-fast Matching"
-            description="Avoid weeks sifting through resumes and working out arrangements. Just tell us what you need, and we’ll find the exact right talent and terms."
-          />
-          <FeatureCard
-            icon={<FaHandPointer />}
-            heading="“Plug and Play” Onboarding"
-            description="Paro experts know your software and the latest industry advancements, so they can jump in with minimal training to deliver immediate value."
-          />
+          {slice.items.map((e, index) => {
+            return (
+              <FeatureCard
+                key={index}
+                icon={<PiLightningAFill />}
+                heading={e.card_heading}
+                description={e.card_description}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

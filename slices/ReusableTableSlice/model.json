@@ -1,8 +1,8 @@
 {
-  "id": "features",
+  "id": "reusable_table_slice",
   "type": "SharedSlice",
-  "name": "Features",
-  "description": "Features",
+  "name": "ReusableTableSlice",
+  "description": "ReusableTableSlice",
   "variations": [
     {
       "id": "default",
@@ -12,6 +12,13 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "tag": {
+          "type": "Text",
+          "config": {
+            "label": "Tag",
+            "placeholder": ""
+          }
+        },
         "heading": {
           "type": "Text",
           "config": {
@@ -27,22 +34,7 @@
           }
         }
       },
-      "items": {
-        "card_heading": {
-          "type": "Text",
-          "config": {
-            "label": "Card Heading",
-            "placeholder": ""
-          }
-        },
-        "card_description": {
-          "type": "Text",
-          "config": {
-            "label": "Card Description",
-            "placeholder": ""
-          }
-        }
-      }
+      "items": {}
     }
   ]
 }

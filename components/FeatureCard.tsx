@@ -9,11 +9,12 @@ import {
 } from "@/components/ui/card";
 import { PiLightningFill } from "react-icons/pi";
 import { IconType } from "react-icons";
+import { KeyTextField } from "@prismicio/client";
 
 type FeatureCardProps = {
   icon: any;
-  heading: string;
-  description: string;
+  heading: string | KeyTextField;
+  description: string | KeyTextField;
 };
 
 const FeatureCard = ({ icon, heading, description }: FeatureCardProps) => {

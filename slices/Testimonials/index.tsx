@@ -18,13 +18,15 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
       className="block-space"
     >
       <div className="big-container">
-        <div className="mb-8 text-center">
-          <h1 className="mb-4">{slice.primary.heading}</h1>
+        <div className="mb-10 space-y-2 text-center">
+          <h2 className="">{slice.primary.heading}</h2>
           <p>{slice.primary.tagline}</p>
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
           {slice.items.map((e, index) => {
-            return <TestimonialCard name={e.name} review={e.review} />;
+            return (
+              <TestimonialCard name={e.name} review={e.review} key={index} />
+            );
           })}
         </div>
       </div>

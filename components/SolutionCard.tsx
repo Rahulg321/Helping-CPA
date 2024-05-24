@@ -17,13 +17,13 @@ type SolutionCardProps = {
 
 const SolutionCard = ({ icon, heading, content }: SolutionCardProps) => {
   return (
-    <Card>
+    <Card className="bg-[#F1F5F9]">
       <CardHeader>
         <CardTitle className="text-5xl text-mainG">{icon}</CardTitle>
       </CardHeader>
       <CardContent>
         <h3 className="mb-4 leading-none">{heading}</h3>
-        <p>{content}</p>
+        <span>{content}</span>
       </CardContent>
     </Card>
   );

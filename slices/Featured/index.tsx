@@ -17,15 +17,15 @@ const Featured = ({ slice }: FeaturedProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="block-space big-container"
     >
-      <div className="bg-mainG rounded-lg px-14 py-12 items-center text-white flex justify-between">
-        <div>
-          <h2 className="mb-4">{slice.primary.heading}</h2>
-          <p>{slice.primary.tagline}</p>
+      <div className="flex flex-col items-center gap-8 rounded-lg bg-mainG p-8 text-white md:p-12 lg:flex-row lg:justify-between">
+        <div className="space-y-2">
+          <h3 className="">{slice.primary.heading}</h3>
+          <p className="text-sm md:text-base">{slice.primary.tagline}</p>
         </div>
         <div>
           <PrismicNextLink
             field={slice.primary.button_link}
-            className="px-6 py-4 bg-mainY"
+            className="rounded-md bg-mainY p-4 text-sm lg:text-base"
           >
             {slice.primary.button_label}
           </PrismicNextLink>

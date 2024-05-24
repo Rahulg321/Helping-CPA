@@ -24,6 +24,24 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "google_maps_section": {
+              "type": "SharedSlice"
+            },
+            "quote_content": {
+              "type": "SharedSlice"
+            },
+            "reusable_table_slice": {
+              "type": "SharedSlice"
+            },
+            "contact_info_section": {
+              "type": "SharedSlice"
+            },
+            "contact_form_section": {
+              "type": "SharedSlice"
+            },
+            "blog_index": {
+              "type": "SharedSlice"
+            },
             "featured": {
               "type": "SharedSlice"
             },

@@ -18,15 +18,14 @@ const PageHero = ({ slice }: PageHeroProps): JSX.Element => {
       className="block-space bg-gradient-to-r from-[#313B79] to-[#181127] text-white"
     >
       <div className="big-container">
-        <div className="flex items-center">
+        <div className="flex flex-col-reverse items-center md:flex-row">
           <div className="basis-2/3 text-balance px-6 py-4">
             <span className="tracking mb-4 block">{slice.primary.tag}</span>
             <h1 className="mb-4">{slice.primary.heading}</h1>
             <h4>{slice.primary.tagline}</h4>
           </div>
-          <div className="aspect-h-1 aspect-w-4 basis-1/3">
+          <div className="basis-1/3">
             <PrismicNextImage
-              fill
               field={slice.primary.hero_image}
               className="rounded-lg object-cover"
             />

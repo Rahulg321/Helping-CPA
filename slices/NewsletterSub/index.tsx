@@ -18,10 +18,10 @@ const NewsletterSub = ({ slice }: NewsletterSubProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="block-space bg-mainG"
     >
-      <div className="big-container border-l-4 border-l-mainY px-4 py-8 text-white">
-        <span className="mb-2 text-xl font-semibold">PARO NEWSLETTER</span>
-        <h1 className="mb-3">Get the Latest News & Insights from Paro</h1>
-        <p className="mb-2">
+      <div className="big-container space-y-4 border-l-4 border-l-mainY pl-4 text-white">
+        <span className=" text-lg font-semibold">PARO NEWSLETTER</span>
+        <h2 className="">Get the Latest News & Insights from Paro</h2>
+        <p className="">
           Subscribe to get tips, success stories, business resources and more.
         </p>
         <NewsletterForm />

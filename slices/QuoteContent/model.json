@@ -1,8 +1,8 @@
 {
-  "id": "features",
+  "id": "quote_content",
   "type": "SharedSlice",
-  "name": "Features",
-  "description": "Features",
+  "name": "QuoteContent",
+  "description": "QuoteContent",
   "variations": [
     {
       "id": "default",
@@ -12,6 +12,27 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "quote": {
+          "type": "Text",
+          "config": {
+            "label": "Quote",
+            "placeholder": ""
+          }
+        },
+        "author": {
+          "type": "Text",
+          "config": {
+            "label": "Author",
+            "placeholder": ""
+          }
+        },
+        "tag": {
+          "type": "Text",
+          "config": {
+            "label": "Tag",
+            "placeholder": ""
+          }
+        },
         "heading": {
           "type": "Text",
           "config": {
@@ -27,22 +48,7 @@
           }
         }
       },
-      "items": {
-        "card_heading": {
-          "type": "Text",
-          "config": {
-            "label": "Card Heading",
-            "placeholder": ""
-          }
-        },
-        "card_description": {
-          "type": "Text",
-          "config": {
-            "label": "Card Description",
-            "placeholder": ""
-          }
-        }
-      }
+      "items": {}
     }
   ]
 }

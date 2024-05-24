@@ -106,25 +106,12 @@
   }
 
   p {
-    @apply text-xl;
+    @apply text-base md:text-xl;
   }
 
   .lead {
     @apply text-xl text-muted-foreground;
   }
-}
-
-html {
-  font-family: var(--font-hind);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-montserrat);
 }
 
 .big-container {
@@ -138,7 +125,17 @@ h6 {
 }
 
 .block-space-large {
-  padding-block: min(9vh, 14rem);
+  padding-block: min(10vh, 16rem);
+}
+
+.bg-enhanceAi {
+  padding: 46px 0;
+  background-image: url("https://paro.ai/wp-content/uploads/2024/03/ai-resource-hub-bg.png");
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: left !important;
+  background-position-y: bottom !important;
+  background-size: cover !important;
 }
 
 .bg-vercel {
@@ -173,4 +170,32 @@ h6 {
   display: grid;
   min-height: 100dvh;
   grid-template-rows: auto 1fr auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #d9efef;
+}
+
+th {
+  text-align: left;
+}
+
+th,
+td {
+  padding: 1rem;
+}
+
+tr {
+  font-weight: 500;
+}
+
+tr:nth-of-type(2n) {
+  background: hsl(0 0% 0% / 0.1);
+}
+
+.table-container {
+  max-width: 100%;
+  overflow-x: scroll;
 }

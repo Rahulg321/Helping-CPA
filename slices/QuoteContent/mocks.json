@@ -1,0 +1,34 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"quote": {
+				"__TYPE__": "FieldContent",
+				"value": "breath",
+				"type": "Text"
+			},
+			"author": {
+				"__TYPE__": "FieldContent",
+				"value": "century",
+				"type": "Text"
+			},
+			"tag": {
+				"__TYPE__": "FieldContent",
+				"value": "outside",
+				"type": "Text"
+			},
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "dot",
+				"type": "Text"
+			},
+			"tagline": {
+				"__TYPE__": "FieldContent",
+				"value": "feel",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

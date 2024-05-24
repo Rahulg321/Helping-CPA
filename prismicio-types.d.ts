@@ -114,6 +114,20 @@ export type BlogpostDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | GoogleMapsSectionSlice
+  | PageHeroSlice
+  | StatsSlice
+  | TextBlockSlice
+  | CheckImageContentSlice
+  | ReusableCardSliceSlice
+  | FullWidthQuoteSlice
+  | FullWidthFeaturedSlice
+  | RecommendedReadingSlice
+  | FrequentAnsweredQuestionsSlice
+  | ContactInfoSectionSlice
+  | ContactFormSectionSlice
+  | QuoteContentSlice
+  | BlogIndexSlice
   | FeaturesSlice
   | ReusuableContentSlice
   | HeadingContentSlice
@@ -188,6 +202,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | QuoteContentSlice
   | BlogIndexSlice
   | ContactInfoSectionSlice
   | GoogleMapsSectionSlice
@@ -282,6 +297,12 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 type ServiceDocumentDataSlicesSlice =
+  | GoogleMapsSectionSlice
+  | QuoteContentSlice
+  | ReusableTableSliceSlice
+  | ContactInfoSectionSlice
+  | ContactFormSectionSlice
+  | BlogIndexSlice
   | FeaturedSlice
   | FeaturesSlice
   | CheckImageContentSlice
@@ -684,6 +705,31 @@ export interface FeaturesSliceDefaultPrimary {
 }
 
 /**
+ * Primary content in *Features → Items*
+ */
+export interface FeaturesSliceDefaultItem {
+  /**
+   * Card Heading field in *Features → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.items[].card_heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  card_heading: prismic.KeyTextField;
+
+  /**
+   * Card Description field in *Features → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.items[].card_description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  card_description: prismic.KeyTextField;
+}
+
+/**
  * Default variation for Features Slice
  *
  * - **API ID**: `default`
@@ -693,7 +739,7 @@ export interface FeaturesSliceDefaultPrimary {
 export type FeaturesSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<FeaturesSliceDefaultPrimary>,
-  never
+  Simplify<FeaturesSliceDefaultItem>
 >;
 
 /**
@@ -1354,6 +1400,91 @@ export type PageHeroSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *QuoteContent → Primary*
+ */
+export interface QuoteContentSliceDefaultPrimary {
+  /**
+   * Quote field in *QuoteContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quote_content.primary.quote
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  quote: prismic.KeyTextField;
+
+  /**
+   * Author field in *QuoteContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quote_content.primary.author
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  author: prismic.KeyTextField;
+
+  /**
+   * Tag field in *QuoteContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quote_content.primary.tag
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tag: prismic.KeyTextField;
+
+  /**
+   * Heading field in *QuoteContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quote_content.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *QuoteContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quote_content.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for QuoteContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type QuoteContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<QuoteContentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *QuoteContent*
+ */
+type QuoteContentSliceVariation = QuoteContentSliceDefault;
+
+/**
+ * QuoteContent Shared Slice
+ *
+ * - **API ID**: `quote_content`
+ * - **Description**: QuoteContent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type QuoteContentSlice = prismic.SharedSlice<
+  "quote_content",
+  QuoteContentSliceVariation
+>;
+
+/**
  * Primary content in *RecommendedReading → Items*
  */
 export interface RecommendedReadingSliceDefaultItem {
@@ -1496,6 +1627,71 @@ type ReusableCardSliceSliceVariation = ReusableCardSliceSliceDefault;
 export type ReusableCardSliceSlice = prismic.SharedSlice<
   "reusable_card_slice",
   ReusableCardSliceSliceVariation
+>;
+
+/**
+ * Primary content in *ReusableTableSlice → Primary*
+ */
+export interface ReusableTableSliceSliceDefaultPrimary {
+  /**
+   * Tag field in *ReusableTableSlice → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reusable_table_slice.primary.tag
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tag: prismic.KeyTextField;
+
+  /**
+   * Heading field in *ReusableTableSlice → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reusable_table_slice.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *ReusableTableSlice → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reusable_table_slice.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ReusableTableSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ReusableTableSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ReusableTableSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ReusableTableSlice*
+ */
+type ReusableTableSliceSliceVariation = ReusableTableSliceSliceDefault;
+
+/**
+ * ReusableTableSlice Shared Slice
+ *
+ * - **API ID**: `reusable_table_slice`
+ * - **Description**: ReusableTableSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ReusableTableSliceSlice = prismic.SharedSlice<
+  "reusable_table_slice",
+  ReusableTableSliceSliceVariation
 >;
 
 /**
@@ -1908,6 +2104,7 @@ declare module "@prismicio/client" {
       FeaturedSliceDefault,
       FeaturesSlice,
       FeaturesSliceDefaultPrimary,
+      FeaturesSliceDefaultItem,
       FeaturesSliceVariation,
       FeaturesSliceDefault,
       FrequentAnsweredQuestionsSlice,
@@ -1946,6 +2143,10 @@ declare module "@prismicio/client" {
       PageHeroSliceDefaultPrimary,
       PageHeroSliceVariation,
       PageHeroSliceDefault,
+      QuoteContentSlice,
+      QuoteContentSliceDefaultPrimary,
+      QuoteContentSliceVariation,
+      QuoteContentSliceDefault,
       RecommendedReadingSlice,
       RecommendedReadingSliceDefaultItem,
       RecommendedReadingSliceVariation,
@@ -1955,6 +2156,10 @@ declare module "@prismicio/client" {
       ReusableCardSliceSliceDefaultItem,
       ReusableCardSliceSliceVariation,
       ReusableCardSliceSliceDefault,
+      ReusableTableSliceSlice,
+      ReusableTableSliceSliceDefaultPrimary,
+      ReusableTableSliceSliceVariation,
+      ReusableTableSliceSliceDefault,
       ReusuableContentSlice,
       ReusuableContentSliceDefaultPrimary,
       ReusuableContentSliceDefaultItem,
